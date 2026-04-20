@@ -268,6 +268,9 @@ local function I(J)
     return table.concat(K)
 end
 local function ak(al, am)
+    if type(al) == "string" then
+        al = al:gsub("//[^\n]*", function(c) return "--" .. string.rep(" ", #c - 2) end)
+    end
     local R, an = e(al, am)
     if R then
         return R
