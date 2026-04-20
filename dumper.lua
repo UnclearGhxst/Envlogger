@@ -207,6 +207,16 @@ local function I(J)
                 L = ad
                 a9 = L + 1
             end
+        elseif aa == 47 and L + 1 <= M and J:byte(L + 1) == 47 then
+            table.insert(K, Q(J:sub(a9, L - 1)))
+            local af = J:find("\n", L + 2, true)
+            if af then
+                L = af
+            else
+                L = M
+            end
+            table.insert(K, "--" .. J:sub(L, L))
+            a9 = L + 1
         elseif aa == 45 and L + 1 <= M and J:byte(L + 1) == 45 then
             table.insert(K, Q(J:sub(a9, L - 1)))
             local ae = L
