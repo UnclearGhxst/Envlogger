@@ -2603,17 +2603,17 @@ _G.bit = {band = function(bo, aa)
     end, bxor = function(bo, aa)
         return ee(ee(bo) ~ ee(aa))
     end, lshift = function(d_, U)
-        return ee(ee(d_) << U % 32)
+        return ee(bit32.lshift(ee(d_), U % 32))
     end, rshift = function(d_, U)
-        return ee(ee(d_) >> U % 32)
+        return ee(bit32.rshift(ee(d_), U % 32))
     end}
 _G.bit32 = _G.bit
 ed.arshift = function(d_, U)
     local b5 = ee(d_ or 0)
     if b5 < 0 then
-        return ee(b5 >> U or 0) + ee(-1 << 32 - (U or 0))
+        return ee(bit32.rshift(b5, U or 0)) + ee(bit32.lshift(-1, 32 - (U or 0)))
     else
-        return ee(b5 >> U or 0)
+        return ee(bit32.rshift(b5, U or 0))
     end
 end
 ed.rol = function(d_, U)
