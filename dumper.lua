@@ -2694,30 +2694,30 @@ _G.bit32 = bit32
 -- table.getn = table.getn or function(b2)
 --         return #b2
 --     end
-table.foreach = table.foreach or function(b2, as)
-        for b4, b5 in pairs(b2) do
-            as(b4, b5)
-        end
-    end
-table.foreachi = table.foreachi or function(b2, as)
-        for L, b5 in ipairs(b2) do
-            as(L, b5)
-        end
-    end
-table.move = table.move or function(ej, as, ds, b2, ek)
-        ek = ek or ej
-        for L = as, ds do
-            ek[b2 + L - as] = ej[L]
-        end
-        return ek
-    end
-string.split = string.split or function(S, el)
-        local b2 = {}
-        for O in string.gmatch(S, "([^" .. (el or "%s") .. "]+)") do
-            table.insert(b2, O)
-        end
-        return b2
-    end
+-- table.foreach = table.foreach or function(b2, as)
+--         for b4, b5 in pairs(b2) do
+--             as(b4, b5)
+--         end
+--     end
+-- table.foreachi = table.foreachi or function(b2, as)
+--         for L, b5 in ipairs(b2) do
+--             as(L, b5)
+--         end
+--     end
+-- table.move = table.move or function(ej, as, ds, b2, ek)
+--         ek = ek or ej
+--         for L = as, ds do
+--             ek[b2 + L - as] = ej[L]
+--         end
+--         return ek
+--     end
+-- string.split = string.split or function(S, el)
+--         local b2 = {}
+--         for O in string.gmatch(S, "([^" .. (el or "%s") .. "]+)") do
+--             table.insert(b2, O)
+--         end
+--         return b2
+--     end
 if not math.frexp then
     math.frexp = function(d_)
         if d_ == 0 then
