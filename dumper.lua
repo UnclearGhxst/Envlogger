@@ -2691,9 +2691,9 @@ bit32 = ed
 bit = ed
 _G.bit = bit
 _G.bit32 = bit32
-table.getn = table.getn or function(b2)
-        return #b2
-    end
+-- table.getn = table.getn or function(b2)
+--         return #b2
+--     end
 table.foreach = table.foreach or function(b2, as)
         for b4, b5 in pairs(b2) do
             as(b4, b5)
